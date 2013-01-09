@@ -81,9 +81,14 @@ function pnw_announcements_views_default_views() {
   $handler->display->display_options['filters']['field_announcement_date_value']['id'] = 'field_announcement_date_value';
   $handler->display->display_options['filters']['field_announcement_date_value']['table'] = 'field_data_field_announcement_date';
   $handler->display->display_options['filters']['field_announcement_date_value']['field'] = 'field_announcement_date_value';
-  $handler->display->display_options['filters']['field_announcement_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_announcement_date_value']['operator'] = '<=';
   $handler->display->display_options['filters']['field_announcement_date_value']['default_date'] = '12AM today';
-  $handler->display->display_options['filters']['field_announcement_date_value']['default_to_date'] = '12PM today';
+  /* Filter criterion: Content: Publish dates - end date (field_announcement_date:value2) */
+  $handler->display->display_options['filters']['field_announcement_date_value2']['id'] = 'field_announcement_date_value2';
+  $handler->display->display_options['filters']['field_announcement_date_value2']['table'] = 'field_data_field_announcement_date';
+  $handler->display->display_options['filters']['field_announcement_date_value2']['field'] = 'field_announcement_date_value2';
+  $handler->display->display_options['filters']['field_announcement_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_announcement_date_value2']['default_date'] = 'now';
 
   /* Display: admin page */
   $handler = $view->new_display('page', 'admin page', 'admin_page');
@@ -230,41 +235,6 @@ function pnw_announcements_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'announcement' => 'announcement',
-  );
-  /* Filter criterion: Content: Publish dates -  start date (field_announcement_date) */
-  $handler->display->display_options['filters']['field_announcement_date_value']['id'] = 'field_announcement_date_value';
-  $handler->display->display_options['filters']['field_announcement_date_value']['table'] = 'field_data_field_announcement_date';
-  $handler->display->display_options['filters']['field_announcement_date_value']['field'] = 'field_announcement_date_value';
-  $handler->display->display_options['filters']['field_announcement_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_announcement_date_value']['default_date'] = '12AM today';
-  $handler->display->display_options['filters']['field_announcement_date_value']['default_to_date'] = '12PM today';
-  /* Filter criterion: display on homepage */
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['id'] = 'field_display_on_homepage_value';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['table'] = 'field_data_field_display_on_homepage';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['field'] = 'field_display_on_homepage_value';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['ui_name'] = 'display on homepage';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['expose']['operator_id'] = 'field_display_on_homepage_value_op';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['expose']['label'] = 'Display on homepage (field_display_on_homepage)';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['expose']['operator'] = 'field_display_on_homepage_value_op';
-  $handler->display->display_options['filters']['field_display_on_homepage_value']['expose']['identifier'] = 'field_display_on_homepage_value';
 
   /* Display: page list */
   $handler = $view->new_display('block', 'page list', 'page_list');
@@ -290,29 +260,6 @@ function pnw_announcements_views_default_views() {
   $handler->display->display_options['arguments']['field_announcement_reference_nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_announcement_reference_nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_announcement_reference_nid']['specify_validation'] = TRUE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'announcement' => 'announcement',
-  );
-  /* Filter criterion: Content: Publish dates -  start date (field_announcement_date) */
-  $handler->display->display_options['filters']['field_announcement_date_value']['id'] = 'field_announcement_date_value';
-  $handler->display->display_options['filters']['field_announcement_date_value']['table'] = 'field_data_field_announcement_date';
-  $handler->display->display_options['filters']['field_announcement_date_value']['field'] = 'field_announcement_date_value';
-  $handler->display->display_options['filters']['field_announcement_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_announcement_date_value']['default_date'] = '12AM today';
-  $handler->display->display_options['filters']['field_announcement_date_value']['default_to_date'] = '12PM today';
   $export['handbook_announcement'] = $view;
 
   return $export;
