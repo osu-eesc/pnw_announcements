@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PNW Announcements feature.
+ */
+
+include_once 'pnw_announcements.features.inc';

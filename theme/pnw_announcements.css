@@ -1,0 +1,12 @@
+/* pnw handbook announcements styles */
+div.announcement {
+	background-color: #FFFFFF;
+  background-image: url('announcement-icon.png');
+  background-position: 5px 1em;
+  background-repeat: no-repeat;
+	border: 2px solid #616161;
+  color: #000000;
+  min-height: 32px;
+  padding: 0 5px 5px 50px;
+  text-transform: none;
+}
