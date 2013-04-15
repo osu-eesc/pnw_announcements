@@ -51,11 +51,23 @@ function pnw_announcements_field_default_fields() {
           'type' => 'hidden',
           'weight' => '3',
         ),
+        'search_index' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'node',
@@ -143,11 +155,23 @@ function pnw_announcements_field_default_fields() {
           'type' => 'hidden',
           'weight' => '4',
         ),
+        'search_index' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '2',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -219,11 +243,25 @@ function pnw_announcements_field_default_fields() {
           'type' => 'text_default',
           'weight' => '2',
         ),
-        'teaser' => array(
-          'label' => 'above',
+        'search_index' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '1',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '8',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'node',
@@ -231,6 +269,44 @@ function pnw_announcements_field_default_fields() {
       'label' => 'Announcement',
       'required' => 0,
       'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'caption_copyright' => 0,
+            'ds_code' => 0,
+            'filtered_html' => 'filtered_html',
+            'full_html' => 0,
+            'php_code' => 0,
+            'plain_text' => 0,
+            'styled_page_title' => 0,
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'caption_copyright' => array(
+                'weight' => '-10',
+              ),
+              'ds_code' => array(
+                'weight' => '-5',
+              ),
+              'filtered_html' => array(
+                'weight' => '0',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+              'styled_page_title' => array(
+                'weight' => '-9',
+              ),
+            ),
+          ),
+        ),
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -288,11 +364,23 @@ function pnw_announcements_field_default_fields() {
           'type' => 'hidden',
           'weight' => '5',
         ),
+        'search_index' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'node',
