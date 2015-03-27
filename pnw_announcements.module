@@ -5,3 +5,5 @@
  */
 
 include_once 'pnw_announcements.features.inc';
+
+drupal_add_css(drupal_get_path('module', 'pnw_announcements') .'/theme/pnw_announcements.css');
